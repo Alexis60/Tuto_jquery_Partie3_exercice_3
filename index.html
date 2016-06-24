@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jquery_partie3_exo3</title>
+  <link rel="stylesheet" href="assets/jquery-ui-1.11.4.custom/jquery-ui.min.css" media="screen" title="no title" charset="utf-8">
+  <script src="assets/jquery-1.12.4.js"></script>
+  <script src="assets/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+</head>
+<body>
+  <form>
+    <input id="num_random" type="texte" value=""/>
+    <input id="bouton" type="button" value="Proposer"/>
+  </form>
+</body>
+<script>
+$(document).ready(function(){
+  var tentatives = 0;
+  $('#num_random').val(function(){
+    var random = Math.floor((Math.random() * 100) +1);
+    $('#bouton').click(function(){
+      tentatives++;
+      if ($('#num_random').val()>random){
+        alert("C'est moins !");}
+        else if ($('#num_random').val()<random){
+          alert("C'est plus !");}
+          else {
+            alert("C'est juste ! Vous avez trouvé en "+ tentatives + " essais.");}
+          });
+        });
+      });
+      </script>
+    </body>
+    </html>
